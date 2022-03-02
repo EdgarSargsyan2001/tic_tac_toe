@@ -7,17 +7,17 @@ let arr = ClickedArray.map((el ,index)=>(el === "") ? index : "$").filter(el=> e
                     
 if(!player || alonegame){
         
-    if(gameFinished){
-      return(
-        <div className="board">
-          {   
-            ClickedArray.map( function (item){
-                if(!gameFinished){return  <div> {item} </div>} 
-            })
-          }
-        </div>
-      )
-    };
+    // if(gameFinished){
+    //   return(
+    //     <div className="board">
+    //       {   
+    //         ClickedArray.map( function (item){
+    //             if(!gameFinished){return  <div> {item} </div>} 
+    //         })
+    //       }
+    //     </div>
+    //   )
+    // };
       return(
       <div className="board">
           {   
@@ -48,12 +48,12 @@ if(!player || alonegame){
  return(
     <div className="board">
        {   
-          ClickedArray.map( function(item,index) {
-            if(!gameFinished ){
-                return <div key={index} className="Square"> {item} </div>
-            }
+          // ClickedArray.map( function(item,index) {
+          //   if(!gameFinished ){
+          //       return <div key={index} className="Square"> {item} </div>
+          //   }
               
-          })
+          // })
        }
     </div>
  )
