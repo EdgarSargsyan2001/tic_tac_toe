@@ -18,13 +18,14 @@ const winCombination = [
 ]
 
 
-
 export default function TicTacToe(){
     const [grid,setgrid] = useState(Array(9).fill(INITIAL))
     const [player,setplayer] = useState(false)
     const [gameFinished,setGamefinishd] = useState(false)
     const [draw,setDraw] = useState(false)
     const [winCount,setWinCount] = useState({X:0,O:0})
+    const [alonegame,setalonegame] = useState(false)
+    const [gamewinwr,setgamewinwr] = useState(false)
     const pleyerTurnColor = useRef()
 
 
@@ -39,6 +40,7 @@ export default function TicTacToe(){
                 grid[winCombination[i][2]] === X_PLAYER 
               ){
                   setGamefinishd(true)
+                  setgamewinwr(true)
                   setWinCount({...winCount, X:winCount.X + 1})
                   //   console.log("x wone")
                   return;
@@ -70,12 +72,14 @@ export default function TicTacToe(){
 
     isGameOver()
 
+
     function restGame_clHistory (val){
         if(val === "cl_History"){
             setWinCount({X:0,O:0})
         }
         setgrid(Array(9).fill(INITIAL))
         setGamefinishd(false)
+        setgamewinwr(false)
         setDraw(false)
 
     }
@@ -86,7 +90,7 @@ export default function TicTacToe(){
             grid.map((item,index)=>{
                 if(index === id){
                     if(player){
-                        evt.target.style.color="rgb(186, 226, 9)"
+                       
                         pleyerTurnColor.current.style.color="rgb(255, 102, 0)"
                         return O_PLAYER
                     }else{
@@ -103,6 +107,16 @@ export default function TicTacToe(){
         setplayer(!player)
     }
     
+    function changealoneplay(evt){
+        if(evt.target.value === "one"){
+            return setalonegame(false)
+
+        }
+        if(evt.target.value === "tow"){
+            return setalonegame(true)
+        }
+    }
+    
     return (
         <div>
             <p className="win-history">
@@ -110,6 +124,12 @@ export default function TicTacToe(){
                 <br/>
                 O's WINS:{winCount.O}
 
+            </p>
+            <p className="select-alone-play">
+                <select className="select-alone-play" onChange={changealoneplay}>
+                    <option value="one">alone</option>
+                    <option value="tow">with two</option>
+                </select>
             </p>
 
             <p  className="pleyer-turn">The Turn:
@@ -121,11 +141,15 @@ export default function TicTacToe(){
            { gameFinished && <EndGame 
                 restGame_clHistory={restGame_clHistory}
                 winCount={winCount}
+                gamewinwr={gamewinwr}
                 player={player} 
                 draw={draw} />
            } 
             <Square 
                 ClickedArray={grid}
+                player={player}
+                alonegame={alonegame}
+                gameFinished={gameFinished}
                 handelClick={handelClick}  
             />
         </div>

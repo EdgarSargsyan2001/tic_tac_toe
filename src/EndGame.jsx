@@ -1,12 +1,12 @@
 import React from "react";
 
 
-export default function EndGame({restGame_clHistory,winCount,player,draw}){
+export default function EndGame({restGame_clHistory,winCount,gamewinwr,player,draw}){
 
 return(
   <div className="end-game-screen">  
 
-    {!draw && <span className="win-text">{!player ? "O WON" : "X WON"}</span>}
+    {!draw && <span className="win-text">{!gamewinwr ? "O WON" : "X WON"}</span>}
     {draw && <span className="win-text">DRAW GAME</span>}
     
     <span className="win-history">
