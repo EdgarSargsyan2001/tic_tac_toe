@@ -11,13 +11,13 @@ if(!player || alonegame){
       return(
         <div className="board">
           {   
-            ClickedArray.map( (item) => {
+            ClickedArray.map( function (item){
                 if(!gameFinished){return  <div> {item} </div>} 
             })
           }
         </div>
       )
-    }
+    };
       return(
       <div className="board">
           {   
@@ -43,12 +43,12 @@ if(!player || alonegame){
 }else{
 
  arr.splice(4,1)
-//  handelClick(parseInt(arr.splice(1,1)))
+ handelClick(parseInt(arr.splice(1,1)))
 
  return(
     <div className="board">
        {   
-          ClickedArray.map( (item,index) => {
+          ClickedArray.map( function(item,index) {
             if(!gameFinished ){
                 return <div key={index} className="Square"> {item} </div>
             }
