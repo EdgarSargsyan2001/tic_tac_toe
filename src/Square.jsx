@@ -43,7 +43,7 @@ if(!player || alonegame){
 }else{
 
  arr.splice(4,1)
- handelClick(parseInt(arr.splice(1,1)))
+//  handelClick(parseInt(arr.splice(1,1)))
 
  return(
     <div className="board">
