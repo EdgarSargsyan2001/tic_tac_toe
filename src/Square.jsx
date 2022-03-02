@@ -26,7 +26,7 @@ if(!player || alonegame){
                   return ( 
                   <div
                       key={index}
-                      className="Square" onClick={(evt)=>handelClick(index,evt)}
+                      className='Square' onClick={(evt)=>handelClick(index,evt)}
                   >
   
                       {item}

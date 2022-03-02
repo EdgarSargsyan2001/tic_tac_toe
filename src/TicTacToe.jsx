@@ -90,11 +90,13 @@ export default function TicTacToe(){
             grid.map((item,index)=>{
                 if(index === id){
                     if(player){
-                       
+                        if(alonegame){evt.target.style.color="rgb(186, 226, 9)"}
+                        
                         pleyerTurnColor.current.style.color="rgb(255, 102, 0)"
                         return O_PLAYER
                     }else{
-                        evt.target.style.color="rgb(255, 102, 0)"
+                        if(alonegame){evt.target.style.color="rgb(255, 102, 0)"}
+                        
                         pleyerTurnColor.current.style.color="rgb(186, 226, 9)"
                         return X_PLAYER
                     }

@@ -15,7 +15,7 @@
 
 .Square {
   background: rgb(146, 241, 241);
-  color: rgb(186, 226, 9);
+  color: rgb(94, 137, 218);
   height: 5rem;
   width:5rem ;
   display: flex;
@@ -24,6 +24,7 @@
   cursor: pointer;
   font-size:4rem ;
 }
+
 .Square:hover{
   background: rgb(98, 226, 226);
 }
