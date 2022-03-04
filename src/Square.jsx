@@ -1,23 +1,11 @@
 import React  from "react";
 
 
-export default function Square({ClickedArray,handelClick,player,gameFinished,alonegame}){
+export default function Square({ClickedArray,handelClick,player,alonegame}){
 
 let arr = ClickedArray.map((el ,index)=>(el === "") ? index : "$").filter(el=> el !== "$")
                     
 if(!player || alonegame){
-        
-    // if(gameFinished){
-    //   return(
-    //     <div className="board">
-    //       {   
-    //         ClickedArray.map( function (item){
-    //             if(!gameFinished){return  <div> {item} </div>} 
-    //         })
-    //       }
-    //     </div>
-    //   )
-    // };
       return(
       <div className="board">
           {   
@@ -47,14 +35,7 @@ if(!player || alonegame){
 
  return(
     <div className="board">
-       {   
-          // ClickedArray.map( function(item,index) {
-          //   if(!gameFinished ){
-          //       return <div key={index} className="Square"> {item} </div>
-          //   }
-              
-          // })
-       }
+       
     </div>
  )
 

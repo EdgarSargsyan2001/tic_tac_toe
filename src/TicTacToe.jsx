@@ -151,7 +151,6 @@ export default function TicTacToe(){
                 ClickedArray={grid}
                 player={player}
                 alonegame={alonegame}
-                gameFinished={gameFinished}
                 handelClick={handelClick}  
             />
         </div>
