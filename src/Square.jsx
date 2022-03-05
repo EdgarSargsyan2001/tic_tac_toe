@@ -1,4 +1,4 @@
-import React, {useRef} from "react";
+import React from "react";
 
 
 export default function Square({ClickedArray,handelClick,player,winComb,alonegame}){
@@ -35,7 +35,7 @@ if(!player || alonegame){
     const NUMarr = []
     let flag = true
 
-    ClickedArray.map((el ,index)=>{
+    let arr = ClickedArray.map((el ,index)=>{
         
         if(el === "") return index
         if(el === "X") return el + index
@@ -61,13 +61,11 @@ if(!player || alonegame){
 for(let i = 0; i < 8; i++){
 
     if(
-        winComb[i].includes(Oarr[0]) && 
-        winComb[i].includes(Oarr[1]) ||
-        winComb[i].includes(Oarr[0]) && 
-        winComb[i].includes(Oarr[2]) ||
-        winComb[i].includes(Oarr[1]) && 
-        winComb[i].includes(Oarr[2])
-        ){
+       ( winComb[i].includes(Oarr[0]) && winComb[i].includes(Oarr[1]) ) ||
+       ( winComb[i].includes(Oarr[0]) && winComb[i].includes(Oarr[2]) ) ||
+       ( winComb[i].includes(Oarr[1]) && winComb[i].includes(Oarr[2]) )
+        
+      ){
             
         let nowOod = winComb[i].
                             filter(( el => (el === Oarr[0] || el === Oarr[1] || el === Oarr[2]) ? false : true ))
@@ -87,12 +85,10 @@ for(let i = 0; i < 8; i++){
     for(let i = 0; i < 8; i++){
     
         if(
-            winComb[i].includes(Xarr[0]) && 
-            winComb[i].includes(Xarr[1]) ||
-            winComb[i].includes(Xarr[0]) && 
-            winComb[i].includes(Xarr[2]) ||
-            winComb[i].includes(Xarr[1]) && 
-            winComb[i].includes(Xarr[2])
+           ( winComb[i].includes(Oarr[0]) && winComb[i].includes(Oarr[1]) ) ||
+           ( winComb[i].includes(Oarr[0]) && winComb[i].includes(Oarr[2]) ) ||
+           ( winComb[i].includes(Oarr[1]) && winComb[i].includes(Oarr[2]) )
+        
           ){
               
            let nowXod = winComb[i].
@@ -100,8 +96,8 @@ for(let i = 0; i < 8; i++){
         
            
             if( !Oarr.includes(parseInt(nowXod)) ) {
-                handelClick(parseInt(nowXod))
-                break 
+                handelClick(parseInt(nowXod));
+                break ;
             }
 
         }
