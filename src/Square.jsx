@@ -37,9 +37,9 @@ if(!player || alonegame){
 
     let arr = ClickedArray.map(function (el,index){
         
-        if(el === "") return index
         if(el === "X") return el + index
         if(el === "O") return el + index
+        return index
     })
     
     arr.forEach( el => {
