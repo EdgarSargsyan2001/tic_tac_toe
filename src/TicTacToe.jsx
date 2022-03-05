@@ -26,6 +26,7 @@ export default function TicTacToe(){
     const [winCount,setWinCount] = useState({X:0,O:0})
     const [alonegame,setalonegame] = useState(false)
     const [gamewinwr,setgamewinwr] = useState(false)
+    const [flagFirst,setflagFirst] = useState(false)
     const pleyerTurnColor = useRef()
 
 
@@ -41,22 +42,25 @@ export default function TicTacToe(){
               ){
                   setGamefinishd(true)
                   setgamewinwr(true)
+                  setflagFirst(false)
                   setWinCount({...winCount, X:winCount.X + 1})
                   //   console.log("x wone")
                   return;
-              }
-        }
-
-        // O win  check
-
-        for(let i = 0; i < 8; i++){
-            if(
-                grid[winCombination[i][0]] === O_PLAYER &&
-                grid[winCombination[i][1]] === O_PLAYER &&
-                grid[winCombination[i][2]] === O_PLAYER 
-              ){
-                  setGamefinishd(true)
-                  setWinCount({...winCount, O:winCount.O + 1})
+                }
+            }
+            
+            // O win  check
+            
+            for(let i = 0; i < 8; i++){
+                if(
+                    grid[winCombination[i][0]] === O_PLAYER &&
+                    grid[winCombination[i][1]] === O_PLAYER &&
+                    grid[winCombination[i][2]] === O_PLAYER 
+                    ){
+                        
+                    setGamefinishd(true)
+                    setflagFirst(true)
+                    setWinCount({...winCount, O:winCount.O + 1})
                   //   console.log("o wone")
                   return
               }
@@ -81,6 +85,7 @@ export default function TicTacToe(){
         setGamefinishd(false)
         setgamewinwr(false)
         setDraw(false)
+        if(!alonegame && flagFirst)setplayer(!player)
 
     }
 
@@ -144,7 +149,6 @@ export default function TicTacToe(){
                 restGame_clHistory={restGame_clHistory}
                 winCount={winCount}
                 gamewinwr={gamewinwr}
-                player={player} 
                 draw={draw} />
            } 
             <Square 

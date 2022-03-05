@@ -63,7 +63,6 @@ for(let i = 0; i < 8; i++){
 
     if(( winComb[i].includes(Oarr[0]) && winComb[i].includes(Oarr[1]) ) || ( winComb[i].includes(Oarr[0]) && winComb[i].includes(Oarr[2]) ) || ( winComb[i].includes(Oarr[1]) && winComb[i].includes(Oarr[2]) )){
        
-       console.log("dddd")
         let nowOod = winComb[i].filter(( el => (el === Oarr[0] || el === Oarr[1] || el === Oarr[2]) ? false : true ))
                             
     
@@ -83,7 +82,6 @@ for(let i = 0; i < 8; i++){
     
         if( ( winComb[i].includes(Xarr[0]) && winComb[i].includes(Xarr[1]) ) || ( winComb[i].includes(Xarr[0]) && winComb[i].includes(Xarr[2]) ) || ( winComb[i].includes(Xarr[1]) && winComb[i].includes(Xarr[2]) ) ){
            
-           console.log('ffff')
            let nowXod = winComb[i].filter((el=> (el === Xarr[0] || el === Xarr[1] || el === Xarr[2]) ? false : true ))
                                 
         
@@ -103,13 +101,13 @@ for(let i = 0; i < 8; i++){
     }
 }
 
-console.log(arr)
+
 
  
  return(
-    <div className="board">
-       
-    </div>
+        <div className="board">
+      
+      </div>
  )
 
 }

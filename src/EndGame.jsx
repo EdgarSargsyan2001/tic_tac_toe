@@ -1,8 +1,7 @@
 import React from "react";
 
 
-export default function EndGame({restGame_clHistory,winCount,gamewinwr,player,draw}){
-
+export default function EndGame({restGame_clHistory,winCount,gamewinwr,draw}){
 return(
   <div className="end-game-screen">  
 
