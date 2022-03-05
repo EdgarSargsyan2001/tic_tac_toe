@@ -40,7 +40,7 @@ if(!player || alonegame){
         if(el === "") return index
         if(el === "X") return el + index
         if(el === "O") return el + index
-
+        return;
     })
     
     arr.forEach( el => {
@@ -65,8 +65,8 @@ for(let i = 0; i < 8; i++){
     if(( winComb[i].includes(Oarr[0]) && winComb[i].includes(Oarr[1]) ) || ( winComb[i].includes(Oarr[0]) && winComb[i].includes(Oarr[2]) ) || ( winComb[i].includes(Oarr[1]) && winComb[i].includes(Oarr[2]) )){
        
        
-        let nowOod = winComb[i].
-                            filter(( el => (el === Oarr[0] || el === Oarr[1] || el === Oarr[2]) ? false : true ))
+        let nowOod = winComb[i].filter(( el => (el === Oarr[0] || el === Oarr[1] || el === Oarr[2]) ? false : true ))
+                            
     
         
         if( !Xarr.includes(parseInt(nowOod)) ) { 
@@ -85,12 +85,8 @@ for(let i = 0; i < 8; i++){
         if( ( winComb[i].includes(Oarr[0]) && winComb[i].includes(Oarr[1]) ) || ( winComb[i].includes(Oarr[0]) && winComb[i].includes(Oarr[2]) ) || ( winComb[i].includes(Oarr[1]) && winComb[i].includes(Oarr[2]) ) ){
            
            
-           
-        
-          
-              
-           let nowXod = winComb[i].
-                                filter((el=> (el === Xarr[0] || el === Xarr[1] || el === Xarr[2]) ? false : true ))
+           let nowXod = winComb[i].filter((el=> (el === Xarr[0] || el === Xarr[1] || el === Xarr[2]) ? false : true ))
+                                
         
            
             if( !Oarr.includes(parseInt(nowXod)) ) {
