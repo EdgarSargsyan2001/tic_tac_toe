@@ -148,6 +148,7 @@ export default function TicTacToe(){
                 draw={draw} />
            } 
             <Square 
+                winComb={winCombination}
                 ClickedArray={grid}
                 player={player}
                 alonegame={alonegame}
