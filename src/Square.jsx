@@ -35,12 +35,11 @@ if(!player || alonegame){
     const NUMarr = []
     let flag = true
 
-    let arr = ClickedArray.map((el,index)=>{
+    let arr = ClickedArray.map(function (el,index){
         
         if(el === "") return index
         if(el === "X") return el + index
         if(el === "O") return el + index
-        return;
     })
     
     arr.forEach( el => {
